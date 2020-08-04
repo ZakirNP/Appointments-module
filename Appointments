@@ -8,7 +8,6 @@ void selectDoctor(string drName[]);
 void makeAppointment(string drName[]); 
 void writeAppointment(string drName[], string patientName, string startTime, string endTime);
 
-string patientName = "Zakir";
 string drName[5] = { "Dr.Khan", "Dr.Blackwell", "Dr.Flemming" };
 
 void selectDoctor(string drName[])
