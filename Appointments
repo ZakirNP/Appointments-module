@@ -4,13 +4,13 @@
 
 using namespace std; 
 
-void selectDoctor(string drName[]);
-void makeAppointment(string drName[]); 
-void writeAppointment(string drName[], string patientName, string startTime, string endTime);
+void selectDoctor(string drName);
+void makeAppointment(string drName); 
+void writeAppointment(string drName, string patientName, string startTime, string endTime);
 
-string drName[5] = { "Dr.Khan", "Dr.Blackwell", "Dr.Flemming" };
+string patientName = "Zakir";
 
-void selectDoctor(string drName[])
+void selectDoctor(string drName)
 {
     char drChoice;
    
@@ -26,17 +26,20 @@ void selectDoctor(string drName[])
     switch (toupper(drChoice)) {
     case 'A':
     {
-        makeAppointment(drName[0]);
+        drName = "Dr.Khan";
+        makeAppointment(drName);
         break;
     }
     case 'B':
     {
-        makeAppointment(drName[1]);
+        drName = "Dr.Blackwell";
+        makeAppointment(drName);
         break;
     }
     case 'C':
     {
-        makeAppointment(drName[2]);
+        drName = "Dr.Flemming";
+        makeAppointment(drName);
         break;
     }
     default:
@@ -44,7 +47,7 @@ void selectDoctor(string drName[])
     }
 }
 
-void makeAppointment(string drName[])
+void makeAppointment(string drName)
 {
     char appointmentTime;
     cout << "Select the time you would like to make the appointment: \n";
@@ -67,81 +70,84 @@ void makeAppointment(string drName[])
     {
         string startTime = "8:00 am";
         string endTime = "9:00 am";
-        writeAppointment(drName[], patientName, startTime, endTime);
+        writeAppointment(drName, patientName, startTime, endTime);
         break;
     }
     case 'B':
     {
     string startTime = "9:00 am";
     string endTime = "10:00 am";
-    writeAppointment(drName[], patientName, startTime, endTime);
+    writeAppointment(drName, patientName, startTime, endTime);
     break;
      }
     case 'C':
     {
         string startTime = "10:00 am";
         string endTime = "11:00 am";
-        writeAppointment(drName[], patientName, startTime, endTime);
+        writeAppointment(drName, patientName, startTime, endTime);
         break;
     }
     case 'D':
     {
         string startTime = "11:00 am";
         string endTime = "12:00 pm";
-        writeAppointment(drName[], patientName, startTime, endTime);
+        writeAppointment(drName, patientName, startTime, endTime);
         break;
     }
     case 'E':
     {
         string startTime = "12:00 pm";
         string endTime = "1:00 pm";
-        writeAppointment(drName[], patientName, startTime, endTime);
+        writeAppointment(drName, patientName, startTime, endTime);
         break;
     }
     case 'F':
     {
         string startTime = "1:00 pm";
         string endTime = "2:00 pm";
-        writeAppointment(drName[], patientName, startTime, endTime);
+        writeAppointment(drName, patientName, startTime, endTime);
         break;
     }
     case 'G':
     {
         string startTime = "2:00 pm";
         string endTime = "3:00 pm";
-        writeAppointment(drName[], patientName, startTime, endTime);
+        writeAppointment(drName, patientName, startTime, endTime);
         break;
     }
     case 'H':
     {
         string startTime = "3:00 pm";
         string endTime = "4:00 pm";
-        writeAppointment(drName[], patientName, startTime, endTime);
+        writeAppointment(drName, patientName, startTime, endTime);
         break;
     }
     case 'I':
     {
         string startTime = "4:00 pm";
         string endTime = "5:00 pm";
-        writeAppointment(drName[], patientName, startTime, endTime);
+        writeAppointment(drName, patientName, startTime, endTime);
         break;
     }
     case 'J':
     {
         string startTime = "5:00 pm";
         string endTime = "6:00 pm";
-        writeAppointment(drName[], patientName, startTime, endTime);
+        writeAppointment(drName, patientName, startTime, endTime);
         break;
     }
     default:
+    {
         cout << "Invalid Entry" << endl;
+    }
 }
 
 
-    void writeAppointment(string drName[], string patientName, string startTime, string endTime)
+    void writeAppointment(string drName, string patientName, string startTime, string endTime)
     {
         ofstream myfile;
         myfile.open("appointments.txt");
         myfile << patientName << startTime << endTime << "\n";
         myfile.close;
     }
+
